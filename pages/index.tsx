@@ -1,33 +1,24 @@
-import type { NextPage } from "next";
-import Link from "next/link";
-import { useState } from "react";
+import type { GetServerSideProps, NextPage } from "next";
+import CharacterList from "./components/characterList";
+import { ICharacterList } from "./types/application";
 
-const Home: NextPage = ({ characters }: any) => {
-  const [ postNum, setPostNum] = useState(3);
-  const handleClick = () => setPostNum(prevPostNum => prevPostNum + 3);
-  console.log('postNum:', postNum)
-  
-  return (
-    <div>
-      {characters.slice(0, postNum).map((character: any, index: number) => (
-        <Link key={index} href={{ pathname: "/character", query: { characterId: index + 1 } }}>
-          {character.name}
-        </Link>
-      ))}
-
-      <button onClick={handleClick}>Load More</button>
-    </div>
-  );
+const Page: NextPage<ICharacterList> = ({ list }) => {
+  return <CharacterList list={list}/>
 };
 
-Home.getInitialProps = async (ctx) => {
-  const response = await fetch("https://swapi.dev/api/people");
-  if (response.ok) {
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  try {
+    const response = await fetch("https://swapi.dev/api/people");
     const { results } = await response.json();
-    return { characters: results };
+    return {
+      props: {
+        list: results,
+      },
+    };
+  } catch (e: any) {
+    console.error(e);
+    return { props: {} };
   }
-
-  return [];
 };
 
-export default Home;
+export default Page;
