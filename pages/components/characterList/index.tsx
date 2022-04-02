@@ -17,15 +17,15 @@ const CharacterList: React.FC<ICharacterList> = ({ list }) => {
       </Header>
       <List>
         {list?.slice(0, charNum).map((character: any, index: number) => (
-          <ListItem>
-            <h3>{character?.name}</h3>
-            <Link
-              key={index}
-              href={{ pathname: "/detail", query: { characterId: index + 1 } }}
-            >
+          <Link
+            key={index}
+            href={{ pathname: "/detail", query: { characterId: index + 1 } }}
+          >
+            <ListItem>
+              <h3>{character?.name}</h3>
               ...
-            </Link>
-          </ListItem>
+            </ListItem>
+          </Link>
         ))}
       </List>
       <LoadMore onClick={handleClick}>Load More</LoadMore>

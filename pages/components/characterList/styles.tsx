@@ -16,7 +16,7 @@ export const Header = styled.div`
   h2 {
     margin: 0;
     text-transform: uppercase;
-    color: #888;
+    color: black;
     letter-spacing: 4px;
     font-size: 18px;
     font-weight: 300;
@@ -42,7 +42,7 @@ export const ListItem = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  padding: 24px;
+  padding: 32px 24px;
   margin: 16px 0;
   box-shadow: 0 8px 12px 0 darkgrey;
   border-radius: 5px;
