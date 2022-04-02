@@ -1,7 +1,6 @@
 export interface ICharacterList {
   list: string[];
 }
-
 export interface ICharacter {
   data: {
     name: string;
@@ -21,4 +20,11 @@ export interface ICharacter {
     edited: string;
     url: string;
   };
+}
+
+export interface IMediaQueries {
+  desktop: string;
+  tablet: string;
+  mobile: string;
+  mobileS: string;
 }
