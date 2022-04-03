@@ -25,7 +25,7 @@ const Character: NextPage<ICharacter> = ({ data, films }) => {
     birth_year,
   } = data || {};
   return (
-    <Wrapper>
+    <Wrapper test-id="character-detail">
       <Header>
         <h2>. {name} .</h2>
       </Header>

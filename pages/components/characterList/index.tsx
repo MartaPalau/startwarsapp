@@ -21,7 +21,7 @@ const CharacterList: React.FC<ICharacterList> = ({ list }) => {
     });
 
   return (
-    <Wrapper>
+    <Wrapper data-testid="character-list">
       <Header>
         <Image src="/misc.svg" height={20} width={20} />
         <h2>Star Wars Characters</h2>
