@@ -4,10 +4,9 @@ import Image from "next/image";
 import { ICharacter } from "../../types/application";
 import { Wrapper, Header, Card, Bottom, CardHeader } from "./styles";
 
-const Character: NextPage<ICharacter> = ({ data }) => {
+const Character: NextPage<ICharacter> = ({ data, films }) => {
   const {
     name,
-    films = [],
     height,
     gender,
     mass,
@@ -15,7 +14,7 @@ const Character: NextPage<ICharacter> = ({ data }) => {
     eye_color,
     skin_color,
     birth_year,
-  } = data;
+  } = data || {};
   return (
     <Wrapper>
       <Header>
@@ -33,10 +32,10 @@ const Character: NextPage<ICharacter> = ({ data }) => {
       <Card>
         <CardHeader>
           <Image src="/fighter.svg" height={20} width={20} />
-          <h4>{films.length} Films</h4>
+          <h4>{films?.length} Films</h4>
         </CardHeader>
-        {films.map(film => (
-          <h4>{film}</h4>
+        {films?.map(film => (
+          <h4>{film?.title}</h4>
         ))}
       </Card>
       <Link href={"/"}>

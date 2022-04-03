@@ -56,6 +56,8 @@ export const Card = styled.div`
 export const CardHeader = styled.div`
   display: flex;
   justify-content: center;
+  margin-bottom: 16px;
+
   h4 {
     margin: 0 0 0 16px;
     color: black;
