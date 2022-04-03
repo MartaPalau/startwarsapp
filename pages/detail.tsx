@@ -14,7 +14,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     const data = await dataRes.json();
 
     let filmsArray = await Promise.all(
-      data.films.map(async (filmUrl: any) => {
+      data?.films.map(async (filmUrl: any) => {
         let filmResponse = await fetch(filmUrl)
         return filmResponse.json()
       })

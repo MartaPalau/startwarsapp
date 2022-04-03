@@ -35,7 +35,7 @@ const CharacterList: React.FC<ICharacterList> = ({ list }) => {
             <ListItem>
               <ListItemHeader>
                 <h3>{character?.name}</h3>
-                <Image src="/blaster.svg" height={20} width={20} />
+                <Image src="/blaster.svg" height={25} width={25} />
               </ListItemHeader>
               <ListItemInfo>
                 <h5>{character?.films.length} films</h5>

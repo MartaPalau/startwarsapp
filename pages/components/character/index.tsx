@@ -2,7 +2,16 @@ import type { GetServerSideProps, NextPage } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { ICharacter } from "../../types/application";
-import { Wrapper, Header, Card, Bottom, CardHeader, Cards, InnerCards } from "./styles";
+import {
+  Wrapper,
+  Header,
+  Card,
+  Bottom,
+  CardHeader,
+  Cards,
+  InnerCards,
+  CardItem,
+} from "./styles";
 
 const Character: NextPage<ICharacter> = ({ data, films }) => {
   const {
@@ -18,7 +27,7 @@ const Character: NextPage<ICharacter> = ({ data, films }) => {
   return (
     <Wrapper>
       <Header>
-        <h2>{name}</h2>
+        <h2>. {name} .</h2>
       </Header>
       <Cards>
         <InnerCards>
@@ -37,7 +46,10 @@ const Character: NextPage<ICharacter> = ({ data, films }) => {
               <h4>{films?.length} Films</h4>
             </CardHeader>
             {films?.map((film) => (
-              <h4>{film?.title}</h4>
+              <CardItem>
+                <Image src="/deathStar.svg" height={15} width={15} />
+                <h4>{film?.title}</h4>
+              </CardItem>
             ))}
           </Card>
         </InnerCards>

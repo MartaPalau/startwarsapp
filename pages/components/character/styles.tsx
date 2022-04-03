@@ -85,6 +85,14 @@ export const CardHeader = styled.div`
   }
 `;
 
+export const CardItem = styled.div`
+  display: flex;
+
+  h4 {
+    margin-left: 16px;
+  }
+`;
+
 export const Bottom = styled.div`
   background-color: darkgrey;
   border: none;

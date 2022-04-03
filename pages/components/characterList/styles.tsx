@@ -51,10 +51,10 @@ export const ListItem = styled.div`
   box-shadow: 0 8px 12px 0 darkgrey;
   border-radius: 5px;
   justify-content: space-between;
-  height: 115px;
-  width: 300px;
+  height: 130px;
+  width: 340px;
   cursor: pointer;
-  margin: 18px;
+  margin: 16px;
 
   &::nth-last-child() {
     margin-bottom: 32px;
@@ -79,6 +79,7 @@ export const ListItem = styled.div`
   }
 
   @media (min-width: ${media.mobile}) {
+    width: 300px;
   }
 `;
 
