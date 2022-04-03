@@ -23,7 +23,7 @@ const CharacterList: React.FC<ICharacterList> = ({ list }) => {
   return (
     <Wrapper data-testid="character-list">
       <Header>
-        <Image src="/misc.svg" height={20} width={20} />
+        <Image src="/misc.svg" alt="header" height={20} width={20} />
         <h2>Star Wars Characters</h2>
       </Header>
       <List>
@@ -35,7 +35,7 @@ const CharacterList: React.FC<ICharacterList> = ({ list }) => {
             <ListItem>
               <ListItemHeader>
                 <h3>{character?.name}</h3>
-                <Image src="/blaster.svg" height={25} width={25} />
+                <Image src="/blaster.svg" alt="card-item" height={25} width={25} />
               </ListItemHeader>
               <ListItemInfo>
                 <h5>{character?.films.length} films</h5>

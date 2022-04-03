@@ -42,12 +42,12 @@ const Character: NextPage<ICharacter> = ({ data, films }) => {
           </Card>
           <Card>
             <CardHeader>
-              <Image src="/fighter.svg" height={20} width={20} />
+              <Image src="/fighter.svg" alt="films_header" height={20} width={20} />
               <h4>{films?.length} Films</h4>
             </CardHeader>
             {films?.map((film) => (
-              <CardItem>
-                <Image src="/deathStar.svg" height={15} width={15} />
+              <CardItem key={film?.episode_id}>
+                <Image src="/deathStar.svg" alt="film_item" height={15} width={15} />
                 <h4>{film?.title}</h4>
               </CardItem>
             ))}
