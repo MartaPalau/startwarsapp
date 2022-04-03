@@ -1,7 +1,16 @@
 import Link from "next/link";
+import Image from "next/image";
 import React, { useState } from "react";
 import { ICharacterList } from "../../types/application";
-import { Wrapper, Header, List, LoadMore, ListItem } from "./styles";
+import {
+  Wrapper,
+  Header,
+  List,
+  Bottom,
+  ListItem,
+  ListItemInfo,
+  ListItemHeader,
+} from "./styles";
 
 const CharacterList: React.FC<ICharacterList> = ({ list }) => {
   const [charNum, setCharNum] = useState(3);
@@ -13,6 +22,7 @@ const CharacterList: React.FC<ICharacterList> = ({ list }) => {
   return (
     <Wrapper>
       <Header>
+        <Image src="/misc.svg" height={20} width={20} />
         <h2>Star Wars Characters</h2>
       </Header>
       <List>
@@ -22,13 +32,19 @@ const CharacterList: React.FC<ICharacterList> = ({ list }) => {
             href={{ pathname: "/detail", query: { characterId: index + 1 } }}
           >
             <ListItem>
-              <h3>{character?.name}</h3>
-              ...
+              <ListItemHeader>
+                <h3>{character?.name}</h3>
+                <Image src="/blaster.svg" height={20} width={20} />
+              </ListItemHeader>
+              <ListItemInfo>
+                <h5>{character?.films.length} films</h5>
+                <h5>birth year: {character?.birth_year}</h5>
+              </ListItemInfo>
             </ListItem>
           </Link>
         ))}
       </List>
-      <LoadMore onClick={handleClick}>Load More</LoadMore>
+      <Bottom onClick={handleClick}>Load More</Bottom>
     </Wrapper>
   );
 };

@@ -28,11 +28,11 @@ export const Header = styled.div`
 
 export const Card = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   background-color: white;
-  padding: 8px 24px;
-  margin: 16px 0;
+  padding: 24px;
+  margin: 16px 16px;
+  border-radius: 5px;
 
   a {
     display: block;
@@ -40,19 +40,32 @@ export const Card = styled.div`
     letter-spacing: 4px;
   }
 
-  h3 {
+  h4 {
     margin: 0;
     color: #888;
-    letter-spacing: 4px;
-    font-size: 18px;
+    letter-spacing: 2px;
+    font-size: 14px;
     font-weight: 300;
+    padding: 8px 0;
   }
 
   @media (min-width: ${media.mobile}) {
   }
 `;
 
-export const LoadMore = styled.div`
+export const CardHeader = styled.div`
+  display: flex;
+  justify-content: center;
+  h4 {
+    margin: 0 0 0 16px;
+    color: black;
+  }
+
+  @media (min-width: ${media.mobile}) {
+  }
+`;
+
+export const Bottom = styled.div`
   background-color: darkgrey;
   border: none;
   padding: 18px 0;

@@ -7,6 +7,8 @@ export const Wrapper = styled.div`
 `;
 
 export const Header = styled.div`
+  display: flex;
+  justify-content: space-evenly;
   background-color: white;
   margin: 0;
   padding: 32px 24px;
@@ -14,7 +16,7 @@ export const Header = styled.div`
   text-align: center;
 
   h2 {
-    margin: 0;
+    margin: 0 0 0 16px;
     text-transform: uppercase;
     color: black;
     letter-spacing: 4px;
@@ -39,13 +41,14 @@ export const List = styled.div`
 
 export const ListItem = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   background-color: white;
-  padding: 32px 24px;
+  padding: 24px;
   margin: 16px 0;
   box-shadow: 0 8px 12px 0 darkgrey;
   border-radius: 5px;
+  justify-content: space-between;
+  height: 115px;
 
   a {
     display: block;
@@ -65,7 +68,29 @@ export const ListItem = styled.div`
   }
 `;
 
-export const LoadMore = styled.div`
+export const ListItemInfo = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  h5 {
+    margin: 0;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  @media (min-width: ${media.mobile}) {
+  }
+`;
+
+export const ListItemHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  @media (min-width: ${media.mobile}) {
+  }
+`;
+
+export const Bottom = styled.div`
   background-color: darkgrey;
   border: none;
   padding: 18px 0;
