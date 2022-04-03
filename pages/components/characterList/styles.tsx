@@ -25,17 +25,21 @@ export const Header = styled.div`
   }
 
   @media (min-width: ${media.mobile}) {
+    justify-content: start;
+    flex-wrap: wrap;
   }
 `;
 
 export const List = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 8px 24px;
+  display: grid;
+  justify-content: center;
+  margin: 13px 0 72px 0;
 
   @media (min-width: ${media.mobile}) {
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 340px);
+    grid-gap: 20px;
+    margin-bottom: 72px;
   }
 `;
 
@@ -44,11 +48,21 @@ export const ListItem = styled.div`
   flex-direction: column;
   background-color: white;
   padding: 24px;
-  margin: 16px 0;
   box-shadow: 0 8px 12px 0 darkgrey;
   border-radius: 5px;
   justify-content: space-between;
   height: 115px;
+  width: 300px;
+  cursor: pointer;
+  margin: 18px;
+
+  &::nth-last-child() {
+    margin-bottom: 32px;
+  }
+
+  &:hover {
+    background-color: #eee;
+  }
 
   a {
     display: block;
@@ -95,9 +109,29 @@ export const Bottom = styled.div`
   border: none;
   padding: 18px 0;
   text-align: center;
-  color: white;
-  letter-spacing: 4px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+
+  h4 {
+    margin: 0;
+    color: white;
+    letter-spacing: 4px;
+    margin: 0;
+    font-weight: 300;
+  }
 
   @media (min-width: ${media.mobile}) {
+  }
+`;
+
+export const BottomLink = styled.div`
+  color: white;
+  letter-spacing: 4px;
+  font-weight: 300;
+  cursor: pointer;
+
+  &:hover {
+    color: #444;
   }
 `;

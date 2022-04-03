@@ -1,5 +1,6 @@
 export interface ICharacterList {
   list: string[];
+  disable?: boolean;
 }
 export interface ICharacter {
   data: {

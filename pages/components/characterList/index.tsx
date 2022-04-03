@@ -10,6 +10,7 @@ import {
   ListItem,
   ListItemInfo,
   ListItemHeader,
+  BottomLink,
 } from "./styles";
 
 const CharacterList: React.FC<ICharacterList> = ({ list }) => {
@@ -44,7 +45,13 @@ const CharacterList: React.FC<ICharacterList> = ({ list }) => {
           </Link>
         ))}
       </List>
-      <Bottom onClick={handleClick}>Load More</Bottom>
+      <Bottom>
+        {list.length >= charNum ? (
+          <BottomLink onClick={handleClick}>Load More</BottomLink>
+        ) : (
+          <h4>No more items</h4>
+        )}
+      </Bottom>
     </Wrapper>
   );
 };

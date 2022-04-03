@@ -26,6 +26,23 @@ export const Header = styled.div`
   }
 `;
 
+export const Cards = styled.div`
+  padding-bottom: 70px;
+
+  @media (min-width: ${media.mobile}) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+export const InnerCards = styled.div`
+  @media (min-width: ${media.mobile}) {
+    width: auto;
+  }
+`;
+
 export const Card = styled.div`
   display: flex;
   flex-direction: column;
@@ -50,6 +67,7 @@ export const Card = styled.div`
   }
 
   @media (min-width: ${media.mobile}) {
+    width: 500px;
   }
 `;
 
@@ -72,8 +90,23 @@ export const Bottom = styled.div`
   border: none;
   padding: 18px 0;
   text-align: center;
-  color: white;
-  letter-spacing: 4px;
+  cursor: pointer;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+
+  &:hover {
+    h4 {
+      color: #444;
+    }
+  }
+
+  h4 {
+    color: white;
+    letter-spacing: 4px;
+    margin: 0;
+    font-weight: 300;
+  }
 
   @media (min-width: ${media.mobile}) {
   }
