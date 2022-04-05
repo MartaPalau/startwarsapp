@@ -273,7 +273,7 @@ describe("getServerSideProps", () => {
       expect.objectContaining({
         props: {
           list: {
-            status: "not",
+            status: "notFound",
             message: list,
           },
         },
