@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
+import fetch from "jest-fetch-mock";
 import CharacterList from "../pages/components/characterList";
-import { ICharacterList } from "../pages/types/application";
+import { getServerSideProps } from "../pages/index";
 
 const list = [
   {
@@ -241,10 +242,42 @@ const list = [
   },
 ];
 
+const context: {
+  req: {},
+  query: {},
+  resolvedUrl: '/',
+  locales: '',
+  locale: '',
+  defaultLocale: ''
+}
+
 describe("Page", () => {
   it("renders a character list", () => {
     render(<CharacterList list={list} />);
 
     expect(screen.getByTestId("character-list")).toBeInTheDocument();
+  });
+});
+
+describe("getServerSideProps", () => {
+  beforeEach(() => {
+    fetch.resetMocks();
+  });
+
+  fetch.mockResponseOnce(JSON.stringify({ status: "success", message: list }));
+
+  it("should fail starwars people api", async () => {
+    const response = await getServerSideProps(context);
+    //pending fix problem with context type
+    expect(response).toEqual(
+      expect.objectContaining({
+        props: {
+          list: {
+            status: "not",
+            message: list,
+          },
+        },
+      })
+    );
   });
 });

@@ -31,11 +31,17 @@ const CharacterList: React.FC<ICharacterList> = ({ list }) => {
           <Link
             key={index}
             href={{ pathname: "/detail", query: { characterId: index + 1 } }}
+            passHref
           >
             <ListItem>
               <ListItemHeader>
                 <h3>{character?.name}</h3>
-                <Image src="/blaster.svg" alt="card-item" height={25} width={25} />
+                <Image
+                  src="/blaster.svg"
+                  alt="card-item"
+                  height={25}
+                  width={25}
+                />
               </ListItemHeader>
               <ListItemInfo>
                 <h5>{character?.films.length} films</h5>

@@ -55,7 +55,7 @@ const Character: NextPage<ICharacter> = ({ data, films }) => {
         </InnerCards>
       </Cards>
 
-      <Link href={"/"}>
+      <Link href={"/"} passHref>
         <Bottom>
           <h4>Back to Home</h4>
         </Bottom>
