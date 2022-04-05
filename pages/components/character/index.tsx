@@ -10,7 +10,7 @@ import {
   CardHeader,
   Cards,
   InnerCards,
-  CardItem,
+  CardItem
 } from "./styles";
 
 const Character: NextPage<ICharacter> = ({ data, films }) => {
@@ -27,7 +27,9 @@ const Character: NextPage<ICharacter> = ({ data, films }) => {
   return (
     <Wrapper test-id="character-detail">
       <Header>
-        <h2>. {name} .</h2>
+        <Image src="/misc.svg" alt="header" height={20} width={20} />
+        <h2>Star Wars Characters</h2>
+        <h4>{name}</h4>
       </Header>
       <Cards>
         <InnerCards>
@@ -42,12 +44,22 @@ const Character: NextPage<ICharacter> = ({ data, films }) => {
           </Card>
           <Card>
             <CardHeader>
-              <Image src="/fighter.svg" alt="films_header" height={20} width={20} />
+              <Image
+                src="/fighter.svg"
+                alt="films_header"
+                height={20}
+                width={20}
+              />
               <h4>{films?.length} Films</h4>
             </CardHeader>
             {films?.map((film) => (
               <CardItem key={film?.episode_id}>
-                <Image src="/deathStar.svg" alt="film_item" height={15} width={15} />
+                <Image
+                  src="/deathStar.svg"
+                  alt="film_item"
+                  height={15}
+                  width={15}
+                />
                 <h4>{film?.title}</h4>
               </CardItem>
             ))}

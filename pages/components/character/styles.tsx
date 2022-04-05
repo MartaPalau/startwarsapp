@@ -7,22 +7,43 @@ export const Wrapper = styled.div`
 `;
 
 export const Header = styled.div`
+  display: flex;
+  align-items: center;
   background-color: white;
   margin: 0;
   padding: 18px 24px;
   box-shadow: 0 8px 12px 0 darkgrey;
-  text-align: center;
 
+  h4,
   h2 {
     margin: 0;
     text-transform: uppercase;
-    color: black;
     letter-spacing: 4px;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 300;
   }
 
+  h2 {
+    display: flex;
+    flex: 1;
+    margin: 0 16px;
+    color: black;
+  }
+
+  h4 {
+    color: #888;
+    text-align: right;
+  }
+
   @media (min-width: ${media.mobile}) {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    h4,
+    h2 {
+      font-size: 16px;
+    }
   }
 `;
 

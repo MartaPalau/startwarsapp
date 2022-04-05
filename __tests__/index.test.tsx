@@ -266,7 +266,9 @@ describe("getServerSideProps", () => {
     );
     expect(response).toEqual(
       expect.objectContaining({
-        notFound: true,
+        props: {
+          notFound: true,
+        },
       })
     );
   });

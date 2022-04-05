@@ -3,7 +3,7 @@ import CharacterList from "./components/characterList";
 import { ICharacterList } from "./types/application";
 
 const Page: NextPage<ICharacterList> = ({ list }) => {
-  return <CharacterList list={list}/>
+  return <CharacterList list={list} />;
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
@@ -16,7 +16,11 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       },
     };
   } catch (e: any) {
-    return { notFound: true };
+    return {
+      props: {
+        notFound: true,
+      },
+    };
   }
 };
 
